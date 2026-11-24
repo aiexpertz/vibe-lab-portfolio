@@ -6,6 +6,7 @@ import { Services } from "@/components/portfolio/Services";
 import { Philosophy } from "@/components/portfolio/Philosophy";
 import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact, Footer } from "@/components/portfolio/Contact";
+import { Faq, FAQS } from "@/components/portfolio/Faq";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -32,9 +33,53 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      name: "VIBE_LAB \u2014 Ammar Siddiqui, AI Automation for Real Estate",
+      url: "https://ammaraiexpert.findhubmedia.com/",
+      image: "https://ammaraiexpert.findhubmedia.com/og-image.webp",
+      description:
+        "AI automation for real estate agents and agencies: n8n lead qualification bots, WhatsApp property inquiry automation, voice AI agents, buyer-listing matching and CRM follow-up systems.",
+      email: "ammarsidaiexpert@gmail.com",
+      telephone: "+92-314-7666278",
+      founder: {
+        "@type": "Person",
+        name: "Ammar Siddiqui",
+        jobTitle: "AI Automation Specialist for Real Estate",
+        sameAs: ["https://www.linkedin.com/in/ammarsiddiqui-ai"],
+      },
+      areaServed: ["Dubai", "United Arab Emirates", "Saudi Arabia", "United States"],
+      knowsAbout: [
+        "n8n",
+        "WhatsApp automation",
+        "AI lead qualification",
+        "real estate CRM automation",
+        "voice AI agents",
+        "appointment booking automation",
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    },
+  ],
+};
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <main>
         <Hero />
@@ -42,6 +87,7 @@ function Index() {
         <Services />
         <Philosophy />
         <Testimonials />
+        <Faq />
         <Contact />
       </main>
       <Footer />
