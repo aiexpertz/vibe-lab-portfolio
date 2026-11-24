@@ -98,7 +98,7 @@ export function Footer() {
     <footer className="py-10 border-t border-white/5 px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="text-[10px] font-mono text-muted-foreground uppercase tracking-[0.2em]">
-          © 2026 VIBE_LAB — ALL RIGHTS RESERVED
+          © 2026 VIBE_LAB — ALL RIGHTS RESERVED · MULTAN, PAKISTAN
         </div>
         <div className="flex items-center gap-3 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
           <div className="size-1.5 bg-accent rounded-full animate-pulse" />
