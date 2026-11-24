@@ -123,7 +123,7 @@ export function Projects() {
           >
             <div
               onClick={() => setFlippedId(flippedId === p.id ? null : p.id)}
-              className={`relative w-full aspect-video transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer ${flippedId === p.id ? "[transform:rotateY(180deg)]" : ""}`}
+              className={`relative w-full aspect-[3/4] sm:aspect-video transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer ${flippedId === p.id ? "[transform:rotateY(180deg)]" : ""}`}
             >
               {/* FRONT */}
               <div className="absolute inset-0 [backface-visibility:hidden] bg-surface outline outline-1 -outline-offset-1 outline-white/10 overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.2)]">
@@ -145,17 +145,17 @@ export function Projects() {
                 <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent">
                   <h3 className="text-lg font-heading font-bold">{p.name}</h3>
                 </div>
-                <span className="absolute bottom-3 right-3 hidden [@media(hover:none)]:block text-[10px] font-mono uppercase tracking-widest text-accent bg-background/70 px-2 py-1">
+                <span className="absolute top-3 right-3 hidden [@media(hover:none)]:block text-[10px] font-mono uppercase tracking-widest text-accent bg-background/70 px-2 py-1">
                   Tap →
                 </span>
               </div>
               {/* BACK */}
-              <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-surface border border-accent/40 p-6 flex flex-col justify-between shadow-[0_20px_60px_-20px_rgba(204,255,0,0.4)]">
+              <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-surface border border-accent/40 p-5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.4)]">
                 <div>
                   <h3 className="text-xl font-heading font-bold mb-3 text-accent">
                     {p.name}
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed mb-4">
+                  <p className="text-sm text-white/80 leading-relaxed mb-4 line-clamp-6 sm:line-clamp-none">
                     {p.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
