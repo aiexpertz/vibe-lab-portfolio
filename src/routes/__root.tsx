@@ -88,8 +88,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary" },
       { name: "twitter:title", content: "AI Automation Specialist for Real Estate" },
       { name: "twitter:description", content: "AI agents that qualify real estate leads, answer property inquiries 24/7 and automate realtor CRM follow-up." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3de486ad-f5f4-455e-b04d-88cbc7db575a/id-preview-d6cd4298--bb94ae31-342f-4e97-8a19-36c03caacfe5.lovable.app-1781524500400.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/3de486ad-f5f4-455e-b04d-88cbc7db575a/id-preview-d6cd4298--bb94ae31-342f-4e97-8a19-36c03caacfe5.lovable.app-1781524500400.png" },
+      { property: "og:image", content: "https://ammaraiexpert.findhubmedia.com/og-image.webp" },
+      { name: "twitter:image", content: "https://ammaraiexpert.findhubmedia.com/og-image.webp" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
