@@ -144,7 +144,7 @@ export const DEFAULTS = {
     phone: "+92 314 7666278",
     github_url: "https://github.com/aiexpertz",
     linkedin_url:
-      "https://www.linkedin.com/in/ammar-siddiqui-19849040a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "https://www.linkedin.com/in/ammarsiddiqui-ai/",
     instagram_url: "https://www.instagram.com/ammaraiexpertz/",
   } as ContactContent,
 };
