@@ -123,10 +123,10 @@ export function Projects() {
           >
             <div
               onClick={() => setFlippedId(flippedId === p.id ? null : p.id)}
-              className={`relative w-full aspect-[3/4] sm:aspect-video transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer ${flippedId === p.id ? "[transform:rotateY(180deg)]" : ""}`}
+              className={`relative w-full grid transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer ${flippedId === p.id ? "[transform:rotateY(180deg)]" : ""}`}
             >
               {/* FRONT */}
-              <div className="absolute inset-0 [backface-visibility:hidden] bg-surface outline outline-1 -outline-offset-1 outline-white/10 overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.2)]">
+              <div className="relative [grid-area:1/1] h-full aspect-video [backface-visibility:hidden] bg-surface outline outline-1 -outline-offset-1 outline-white/10 overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.2)]">
                 {p.image ? (
                   <img
                     src={p.image}
@@ -150,12 +150,12 @@ export function Projects() {
                 </span>
               </div>
               {/* BACK */}
-              <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-surface border border-accent/40 p-5 sm:p-6 flex flex-col justify-between overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.4)]">
+              <div className="[grid-area:1/1] [backface-visibility:hidden] [transform:rotateY(180deg)] bg-surface border border-accent/40 p-5 sm:p-6 flex flex-col justify-between gap-4 shadow-[0_20px_60px_-20px_rgba(204,255,0,0.4)]">
                 <div>
                   <h3 className="text-xl font-heading font-bold mb-3 text-accent">
                     {p.name}
                   </h3>
-                  <p className="text-sm text-white/80 leading-relaxed mb-4 line-clamp-6 sm:line-clamp-none">
+                  <p className="text-sm text-white/80 leading-relaxed mb-4">
                     {p.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
