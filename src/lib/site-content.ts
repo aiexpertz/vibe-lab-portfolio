@@ -117,15 +117,15 @@ export const DEFAULTS = {
       },
       {
         code: "S_06",
-        title: "Custom Real Estate Web Apps",
+        title: "Voice AI Call Agents",
         description:
-          "Fast, AI-powered property portals, agent dashboards and valuation tools built on a modern stack and wired into your existing listing data.",
+          "AI voice agents that answer incoming calls, ask whether the caller wants to invest, buy or rent, collect budget, location and timeline, and alert your team the moment a caller turns into a hot lead.",
       },
     ],
   } as ServicesContent,
   philosophy: {
     heading: "How I Work With Real Estate Teams",
-    body: "Real estate runs on speed — the agent who replies first usually wins the deal. I build AI systems that respond to every property inquiry in seconds, qualify the buyer or seller, and only surface serious leads to your team. Start with one workflow, prove the ROI in weeks, then scale it across your whole pipeline.",
+    body: "Real estate runs on speed — the agent who replies first usually wins the deal. I build AI systems that respond to every property inquiry in seconds, qualify the buyer or seller, and only surface serious leads to your team. Start with one workflow, prove the ROI in weeks, then scale it across your whole pipeline. Every system is designed and built by me in n8n, wired into the WhatsApp, CRM and calendar tools your team already uses.",
     stat1_value: "24/7",
     stat1_label: "Lead Response",
     stat2_value: "<60s",
