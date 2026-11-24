@@ -70,6 +70,7 @@ async function fetchProjects(): Promise<DisplayProject[]> {
 export function Projects() {
   const queryClient = useQueryClient();
   const [active, setActive] = useState<DisplayProject | null>(null);
+  const [flippedId, setFlippedId] = useState<string | null>(null);
   const embedUrl = active?.youtube ? toYouTubeEmbed(active.youtube) : null;
 
   const { data: list = [], isLoading } = useQuery({
@@ -120,7 +121,10 @@ export function Projects() {
             transition={{ duration: 0.6, delay: (i % 2) * 0.1 }}
             className="group [perspective:1400px]"
           >
-            <div className="relative w-full aspect-video transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+            <div
+              onClick={() => setFlippedId(flippedId === p.id ? null : p.id)}
+              className={`relative w-full aspect-video transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] cursor-pointer ${flippedId === p.id ? "[transform:rotateY(180deg)]" : ""}`}
+            >
               {/* FRONT */}
               <div className="absolute inset-0 [backface-visibility:hidden] bg-surface outline outline-1 -outline-offset-1 outline-white/10 overflow-hidden shadow-[0_20px_60px_-20px_rgba(204,255,0,0.2)]">
                 {p.image ? (
@@ -141,6 +145,9 @@ export function Projects() {
                 <div className="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black via-black/70 to-transparent">
                   <h3 className="text-lg font-heading font-bold">{p.name}</h3>
                 </div>
+                <span className="absolute bottom-3 right-3 hidden [@media(hover:none)]:block text-[10px] font-mono uppercase tracking-widest text-accent bg-background/70 px-2 py-1">
+                  Tap →
+                </span>
               </div>
               {/* BACK */}
               <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-surface border border-accent/40 p-6 flex flex-col justify-between shadow-[0_20px_60px_-20px_rgba(204,255,0,0.4)]">
@@ -165,7 +172,10 @@ export function Projects() {
                 {p.youtube && (
                   <button
                     type="button"
-                    onClick={() => setActive(p)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActive(p);
+                    }}
                     className="self-start mt-4 text-[10px] font-bold tracking-widest text-accent hover:underline underline-offset-4"
                   >
                     WATCH_DEMO →
