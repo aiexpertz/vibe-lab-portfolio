@@ -11,15 +11,15 @@ import { Faq, FAQS } from "@/components/portfolio/Faq";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AI Automation for Real Estate | Lead Bots & CRM Agents" },
+      { title: "n8n Automation for Real Estate Agents | AI Lead Bots & WhatsApp Agents" },
       {
         name: "description",
         content:
-          "AI automation specialist for real estate: lead qualification bots, WhatsApp property inquiry chatbots, buyer-to-listing matching and automated CRM follow-up for agents.",
+          "n8n automation for real estate agents: AI lead qualification bots, WhatsApp AI agents, voice AI call agents and CRM follow-up systems that reply to every lead in under 60 seconds.",
       },
       {
         property: "og:title",
-        content: "AI Automation for Real Estate | Lead Bots & CRM Agents",
+        content: "n8n Automation for Real Estate Agents | AI Lead Bots & WhatsApp Agents",
       },
       {
         property: "og:description",
